@@ -1,0 +1,1953 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects version="2.0">
+  <fileHeader companyName="Unknown"
+              productName="Unnamed"
+              productVersion="1"
+              creationDateTime="2022-04-26T08:44:20"
+              contentDescription=""/>
+  <contentHeader name="Untitled3"
+                 version=""
+                 modificationDateTime="2022-06-07T09:24:59"
+                 author="">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="10" y="10"/>
+      </fbd>
+      <ld>
+        <scaling x="10" y="10"/>
+      </ld>
+      <sfc>
+        <scaling x="10" y="10"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+<project xmlns="http://www.plcopen.org/xml/tc6.xsd"
+         name="Untitled3"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <fileHeader companyName="Unknown"
+              productName="Unnamed"
+              productVersion="1"
+              creationDateTime="2022-04-26T08:44:20"
+              contentDescription=""/>
+  <contentHeader name="Untitled3"
+                 modificationDateTime="2022-06-07T09:24:59">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="10" y="10"/>
+      </fbd>
+      <ld>
+        <scaling x="10" y="10"/>
+      </ld>
+      <sfc>
+        <scaling x="10" y="10"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="yewei" pouType="program">
+        <interface>
+          <localVars retain="false" nonpersistent="false" constant="false" persistent="false" nonretain="false">
+            <variable name="high">
+              <type>
+                <UDINT/>
+              </type>
+              <documentation>
+<![CDATA[判别液位高度]]>
+              </documentation>
+            </variable>
+            <variable name="weat">
+              <type>
+                <UDINT/>
+              </type>
+              <documentation>
+<![CDATA[判断是否需要浇水]]>
+              </documentation>
+            </variable>
+            <variable name="TOF_inst0">
+              <type>
+                <derived name="TOF"/>
+              </type>
+            </variable>
+            <variable name="x3">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="x1">
+              <type>
+                <UDINT/>
+              </type>
+            </variable>
+            <variable name="x2">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="xhigh">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[浇水系统工作开关]]>
+              </documentation>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <leftPowerRail comment="" height="40.0" localId="1" width="10.0">
+              <position x="50" y="60" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="180" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="" localId="2" typeName="MAX_UDINT" width="90.0">
+              <position x="273" y="32" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="110">
+                      <position x="273" y="80" />
+                      <position x="122" y="80" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="3">
+                      <position x="273" y="110" />
+                      <position x="253" y="110" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="4">
+                      <position x="273" y="140" />
+                      <position x="253" y="140" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="90" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="90" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="AIO211_AI_CH2," edge="none" executionOrderId="0" height="20.0" localId="3" negated="false" storage="none" width="99.0">
+              <position x="154" y="100" />
+              <connectionPointOut>
+                <relPosition x="99" y="10" />
+              </connectionPointOut>
+              <expression>AIO211_AI_CH2</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="4" negated="false" storage="none" width="38.0">
+              <position x="215" y="130" />
+              <connectionPointOut>
+                <relPosition x="38" y="10" />
+              </connectionPointOut>
+              <expression>5000</expression>
+            </inVariable>
+            <outVariable comment="&#21028;&#21035;&#28082;&#20301;&#39640;&#24230;" edge="none" executionOrderId="0" height="20.0" localId="5" negated="false" storage="none" width="35.0">
+              <position x="383" y="100" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="2">
+                  <position x="383" y="110" />
+                  <position x="363" y="110" />
+                </connection>
+              </connectionPointIn>
+              <expression>high</expression>
+            </outVariable>
+            <leftPowerRail comment="" height="40.0" localId="10" width="10.0">
+              <position x="50" y="400" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="500" />
+            </leftPowerRail>
+            <contact comment="&#21028;&#21035;&#28082;&#20301;&#39640;&#24230;" edge="none" height="15.0" localId="7" negated="false" storage="none" typeName="EQ_UDINT" width="32.0">
+              <position x="90" y="410" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection refLocalId="10">
+                  <position x="90" y="420" />
+                  <position x="60" y="420" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="31" y="10" />
+              </connectionPointOut>
+              <variable>high</variable>
+              <variable1>5000</variable1>
+            </contact>
+            <coil comment="" edge="none" height="15.0" localId="9" negated="false" storage="none" width="78.0">
+              <position x="152" y="410" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="7">
+                  <position x="175" y="420" />
+                  <position x="121" y="420" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH3</variable>
+            </coil>
+            <leftPowerRail comment="" height="40.0" localId="11" width="10.0">
+              <position x="50" y="230" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="350" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="" localId="6" typeName="MIN_UDINT" width="80.0">
+              <position x="273" y="202" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="111">
+                      <position x="273" y="250" />
+                      <position x="122" y="250" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="8">
+                      <position x="273" y="280" />
+                      <position x="253" y="280" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="12">
+                      <position x="273" y="310" />
+                      <position x="253" y="310" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="AIO211_AI_CH3," edge="none" executionOrderId="0" height="20.0" localId="8" negated="false" storage="none" width="99.0">
+              <position x="154" y="270" />
+              <connectionPointOut>
+                <relPosition x="99" y="10" />
+              </connectionPointOut>
+              <expression>AIO211_AI_CH3</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="12" negated="false" storage="none" width="38.0">
+              <position x="215" y="300" />
+              <connectionPointOut>
+                <relPosition x="38" y="10" />
+              </connectionPointOut>
+              <expression>7000</expression>
+            </inVariable>
+            <outVariable comment="&#21028;&#26029;&#26159;&#21542;&#38656;&#35201;&#27975;&#27700;" edge="none" executionOrderId="0" height="20.0" localId="13" negated="false" storage="none" width="37.0">
+              <position x="373" y="270" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="6">
+                  <position x="373" y="280" />
+                  <position x="353" y="280" />
+                </connection>
+              </connectionPointIn>
+              <expression>weat</expression>
+            </outVariable>
+            <comment height="50.0" localId="14" width="590.0">
+              <position x="670" y="90" />
+              <content><![CDATA[水箱水位检测（0.2-1.8V对应0-100mm的水位，对应转换为4-12mA输入）]]></content>
+            </comment>
+            <comment height="50.0" localId="15" width="1010.0">
+              <position x="550" y="250" />
+              <content><![CDATA[土壤湿度检测（最高湿度时输出1.6V，最低湿度为5V，对应转换为电流4-12mA输入，则当湿度大于某值说明很干时需要浇水）]]></content>
+            </comment>
+            <leftPowerRail comment="" height="40.0" localId="16" width="10.0">
+              <position x="50" y="550" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="650" />
+            </leftPowerRail>
+            <contact comment="&#21028;&#26029;&#26159;&#21542;&#38656;&#35201;&#27975;&#27700;" edge="none" height="15.0" localId="17" negated="false" storage="none" typeName="EQ_UDINT" width="32.0">
+              <position x="90" y="560" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection refLocalId="16">
+                  <position x="90" y="570" />
+                  <position x="60" y="570" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="31" y="10" />
+              </connectionPointOut>
+              <variable>weat</variable>
+              <variable1>7000</variable1>
+            </contact>
+            <comment height="50.0" localId="19" width="110.0">
+              <position x="770" y="400" />
+              <content><![CDATA[蜂鸣器报警]]></content>
+            </comment>
+            <block height="90.0" instanceName="TOF_inst0" localId="20" typeName="TOF" width="50.0">
+              <position x="210" y="522" />
+              <inputVariables>
+                <variable edge="none" formalParameter="IN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="17">
+                      <position x="210" y="570" />
+                      <position x="121" y="570" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PT" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="21">
+                      <position x="210" y="600" />
+                      <position x="190" y="600" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="Q" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="50" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="ET" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="50" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="21" negated="false" storage="none" width="38.0">
+              <position x="152" y="590" />
+              <connectionPointOut>
+                <relPosition x="38" y="10" />
+              </connectionPointOut>
+              <expression>T#2s</expression>
+            </inVariable>
+            <outVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="22" negated="false" storage="none" width="79.0">
+              <position x="310" y="562" />
+              <connectionPointIn>
+                <relPosition x="0" y="8" />
+                <connection formalParameter="Q" refLocalId="20">
+                  <position x="310" y="570" />
+                  <position x="260" y="570" />
+                </connection>
+              </connectionPointIn>
+              <expression>DO211_CH5</expression>
+            </outVariable>
+            <comment height="50.0" localId="18" width="150.0">
+              <position x="770" y="530" />
+              <content><![CDATA[接通延时2s浇水]]></content>
+            </comment>
+            <contact comment="&#27975;&#27700;&#31995;&#32479;&#24037;&#20316;&#24320;&#20851;" edge="none" height="15.0" localId="110" negated="false" storage="none" typeName="none" width="34.0">
+              <position x="90" y="70" />
+              <connectionPointIn>
+                <relPosition x="1" y="10" />
+                <connection refLocalId="1">
+                  <position x="91" y="80" />
+                  <position x="60" y="80" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="32" y="10" />
+              </connectionPointOut>
+              <variable>xhigh</variable>
+              <variable1 />
+            </contact>
+            <contact comment="&#27975;&#27700;&#31995;&#32479;&#24037;&#20316;&#24320;&#20851;" edge="none" height="15.0" localId="111" negated="false" storage="none" typeName="none" width="34.0">
+              <position x="90" y="240" />
+              <connectionPointIn>
+                <relPosition x="1" y="10" />
+                <connection refLocalId="11">
+                  <position x="91" y="250" />
+                  <position x="60" y="250" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="32" y="10" />
+              </connectionPointOut>
+              <variable>xhigh</variable>
+              <variable1 />
+            </contact>
+          </LD>          
+        </body>
+      </pou>
+      <pou name="guangzhao" pouType="program">
+        <interface>
+          <localVars retain="false" nonpersistent="false" constant="false" persistent="false" nonretain="false">
+            <variable name="light">
+              <type>
+                <UDINT/>
+              </type>
+              <documentation>
+<![CDATA[亮两盏灯]]>
+              </documentation>
+            </variable>
+            <variable name="light0">
+              <type>
+                <UDINT/>
+              </type>
+              <documentation>
+<![CDATA[亮一盏灯]]>
+              </documentation>
+            </variable>
+            <variable name="x1">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[手动关闭开关]]>
+              </documentation>
+            </variable>
+            <variable name="x2">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="xlight">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[光照检测工作开关]]>
+              </documentation>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <leftPowerRail comment="" height="40.0" localId="1" width="10.0">
+              <position x="50" y="60" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="180" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="" localId="2" typeName="MIN_UDINT" width="80.0">
+              <position x="273" y="32" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="25">
+                      <position x="273" y="80" />
+                      <position x="122" y="80" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="3">
+                      <position x="273" y="110" />
+                      <position x="253" y="110" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="4">
+                      <position x="273" y="140" />
+                      <position x="253" y="140" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="AIO211_AI_CH1," edge="none" executionOrderId="0" height="20.0" localId="3" negated="false" storage="none" width="99.0">
+              <position x="154" y="100" />
+              <connectionPointOut>
+                <relPosition x="99" y="10" />
+              </connectionPointOut>
+              <expression>AIO211_AI_CH1</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="4" negated="false" storage="none" width="45.0">
+              <position x="208" y="130" />
+              <connectionPointOut>
+                <relPosition x="45" y="10" />
+              </connectionPointOut>
+              <expression>10000</expression>
+            </inVariable>
+            <outVariable comment="&#20142;&#20004;&#30415;&#28783;" edge="none" executionOrderId="0" height="20.0" localId="5" negated="false" storage="none" width="35.0">
+              <position x="373" y="100" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="2">
+                  <position x="373" y="110" />
+                  <position x="353" y="110" />
+                </connection>
+              </connectionPointIn>
+              <expression>light</expression>
+            </outVariable>
+            <leftPowerRail comment="" height="40.0" localId="6" width="10.0">
+              <position x="50" y="400" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="500" />
+            </leftPowerRail>
+            <contact comment="&#20142;&#19968;&#30415;&#28783;" edge="none" height="15.0" localId="7" negated="false" storage="none" typeName="EQ_UDINT" width="40.0">
+              <position x="120" y="410" />
+              <connectionPointIn>
+                <relPosition x="4" y="10" />
+                <connection refLocalId="6">
+                  <position x="124" y="420" />
+                  <position x="60" y="420" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="35" y="10" />
+              </connectionPointOut>
+              <variable>light</variable>
+              <variable1>10000</variable1>
+            </contact>
+            <coil comment="" edge="none" height="15.0" localId="9" negated="false" storage="set" width="78.0">
+              <position x="220" y="410" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="7">
+                  <position x="243" y="420" />
+                  <position x="155" y="420" />
+                </connection>
+                <connection refLocalId="17">
+                  <position x="243" y="420" />
+                  <position x="190" y="420" />
+                  <position x="190" y="470" />
+                  <position x="153" y="470" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH1</variable>
+            </coil>
+            <leftPowerRail comment="" height="40.0" localId="10" width="10.0">
+              <position x="50" y="230" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="350" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="" localId="8" typeName="MIN_UDINT" width="80.0">
+              <position x="273" y="202" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="26">
+                      <position x="273" y="250" />
+                      <position x="122" y="250" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="11">
+                      <position x="273" y="280" />
+                      <position x="253" y="280" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="12">
+                      <position x="273" y="310" />
+                      <position x="253" y="310" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="AIO211_AI_CH1," edge="none" executionOrderId="0" height="20.0" localId="11" negated="false" storage="none" width="99.0">
+              <position x="154" y="270" />
+              <connectionPointOut>
+                <relPosition x="99" y="10" />
+              </connectionPointOut>
+              <expression>AIO211_AI_CH1</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="12" negated="false" storage="none" width="38.0">
+              <position x="215" y="300" />
+              <connectionPointOut>
+                <relPosition x="38" y="10" />
+              </connectionPointOut>
+              <expression>7000</expression>
+            </inVariable>
+            <outVariable comment="&#20142;&#19968;&#30415;&#28783;" edge="none" executionOrderId="0" height="20.0" localId="13" negated="false" storage="none" width="42.0">
+              <position x="373" y="270" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="8">
+                  <position x="373" y="280" />
+                  <position x="353" y="280" />
+                </connection>
+              </connectionPointIn>
+              <expression>light0</expression>
+            </outVariable>
+            <leftPowerRail comment="" height="40.0" localId="14" width="10.0">
+              <position x="50" y="550" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="650" />
+            </leftPowerRail>
+            <contact comment="&#20142;&#20004;&#30415;&#28783;" edge="none" height="15.0" localId="15" negated="false" storage="none" typeName="EQ_UDINT" width="40.0">
+              <position x="90" y="560" />
+              <connectionPointIn>
+                <relPosition x="4" y="10" />
+                <connection refLocalId="14">
+                  <position x="94" y="570" />
+                  <position x="60" y="570" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="35" y="10" />
+              </connectionPointOut>
+              <variable>light</variable>
+              <variable1>10000</variable1>
+            </contact>
+            <coil comment="" edge="none" height="15.0" localId="16" negated="false" storage="set" width="78.0">
+              <position x="160" y="560" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="15">
+                  <position x="183" y="570" />
+                  <position x="125" y="570" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH2</variable>
+            </coil>
+            <contact comment="" edge="none" height="15.0" localId="17" negated="false" storage="none" typeName="EQ_UDINT" width="35.0">
+              <position x="120" y="460" />
+              <connectionPointIn>
+                <relPosition x="2" y="10" />
+                <connection refLocalId="6">
+                  <position x="122" y="470" />
+                  <position x="90" y="470" />
+                  <position x="90" y="420" />
+                  <position x="60" y="420" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="33" y="10" />
+              </connectionPointOut>
+              <variable>light0</variable>
+              <variable1>7000</variable1>
+            </contact>
+            <comment height="50.0" localId="18" width="660.0">
+              <position x="460" y="50" />
+              <content><![CDATA[光照强度检测（全暗5V，正常光照1V，手电筒光照0.5V，0-5V转换为4-12mA输入)]]></content>
+            </comment>
+            <leftPowerRail comment="" height="40.0" localId="19" width="10.0">
+              <position x="50" y="700" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="800" />
+            </leftPowerRail>
+            <contact comment="&#25163;&#21160;&#20851;&#38381;&#24320;&#20851;" edge="none" height="15.0" localId="20" negated="false" storage="none" typeName="none" width="31.0">
+              <position x="90" y="710" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection refLocalId="19">
+                  <position x="90" y="720" />
+                  <position x="60" y="720" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="31" y="10" />
+              </connectionPointOut>
+              <variable>x1</variable>
+              <variable1 />
+            </contact>
+            <coil comment="" edge="none" height="15.0" localId="21" negated="false" storage="reset" width="78.0">
+              <position x="181" y="710" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="20">
+                  <position x="204" y="720" />
+                  <position x="121" y="720" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH1</variable>
+            </coil>
+            <contact comment="&#20809;&#29031;&#26816;&#27979;&#24037;&#20316;&#24320;&#20851;" edge="none" height="15.0" localId="25" negated="false" storage="none" typeName="none" width="34.0">
+              <position x="90" y="70" />
+              <connectionPointIn>
+                <relPosition x="1" y="10" />
+                <connection refLocalId="1">
+                  <position x="91" y="80" />
+                  <position x="60" y="80" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="32" y="10" />
+              </connectionPointOut>
+              <variable>xlight</variable>
+              <variable1 />
+            </contact>
+            <contact comment="&#20809;&#29031;&#26816;&#27979;&#24037;&#20316;&#24320;&#20851;" edge="none" height="15.0" localId="26" negated="false" storage="none" typeName="none" width="34.0">
+              <position x="90" y="240" />
+              <connectionPointIn>
+                <relPosition x="1" y="10" />
+                <connection refLocalId="10">
+                  <position x="91" y="250" />
+                  <position x="60" y="250" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="32" y="10" />
+              </connectionPointOut>
+              <variable>xlight</variable>
+              <variable1 />
+            </contact>
+            <coil comment="" edge="none" height="15.0" localId="27" negated="false" storage="reset" width="78.0">
+              <position x="181" y="760" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="20">
+                  <position x="204" y="770" />
+                  <position x="151" y="770" />
+                  <position x="151" y="720" />
+                  <position x="121" y="720" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH2</variable>
+            </coil>
+            <coil comment="" edge="none" height="15.0" localId="22" negated="false" storage="set" width="78.0">
+              <position x="215" y="460" />
+              <connectionPointIn>
+                <relPosition x="23" y="10" />
+                <connection refLocalId="17">
+                  <position x="238" y="470" />
+                  <position x="153" y="470" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="53" y="10" />
+              </connectionPointOut>
+              <variable>DO211_CH2</variable>
+            </coil>
+          </LD>          
+        </body>
+      </pou>
+      <pou name="wendu" pouType="program">
+        <interface>
+          <localVars retain="false" nonpersistent="false" constant="false" persistent="false" nonretain="false">
+            <variable name="PV_T">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[温度测量值（0-50）]]>
+              </documentation>
+            </variable>
+            <variable name="MAN_AUTO">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[手自动开关（0自动，1手动）]]>
+              </documentation>
+            </variable>
+            <variable name="KP">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[比例增益]]>
+              </documentation>
+            </variable>
+            <variable name="Ti">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[积分时间]]>
+              </documentation>
+            </variable>
+            <variable name="Td">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[微分时间]]>
+              </documentation>
+            </variable>
+            <variable name="SV">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[设定值（0-100）]]>
+              </documentation>
+            </variable>
+            <variable name="TV">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[调节阀手动设定值]]>
+              </documentation>
+            </variable>
+            <variable name="MV">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[控制器输出]]>
+              </documentation>
+            </variable>
+            <variable name="x">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[温度系统总开关]]>
+              </documentation>
+            </variable>
+            <variable name="PID_inst0">
+              <type>
+                <derived name="PID"/>
+              </type>
+            </variable>
+            <variable name="X1">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="X2">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="Y1">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="Y2">
+              <type>
+                <REAL/>
+              </type>
+            </variable>
+            <variable name="PIPO_Config_inst0">
+              <type>
+                <derived name="PIPO_Config"/>
+              </type>
+            </variable>
+            <variable name="PIPO_PWMA_inst0">
+              <type>
+                <derived name="PIPO_PWMB"/>
+              </type>
+            </variable>
+            <variable name="work">
+              <type>
+                <BOOL/>
+              </type>
+              <documentation>
+<![CDATA[为1电热丝才能工作]]>
+              </documentation>
+            </variable>
+            <variable name="dutyA">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[电热丝]]>
+              </documentation>
+            </variable>
+            <variable name="dutyB">
+              <type>
+                <REAL/>
+              </type>
+              <documentation>
+<![CDATA[风扇]]>
+              </documentation>
+            </variable>
+            <variable name="PIPO_PWMA_inst1">
+              <type>
+                <derived name="PIPO_PWMB"/>
+              </type>
+            </variable>
+            <variable name="PIPO_Config_inst1">
+              <type>
+                <derived name="PIPO_Config"/>
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <LD>
+            <leftPowerRail comment="" height="40.0" localId="1" width="10.0">
+              <position x="50" y="60" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="570" />
+            </leftPowerRail>
+            <contact comment="&#28201;&#24230;&#31995;&#32479;&#24635;&#24320;&#20851;" edge="none" height="15.0" localId="2" negated="false" storage="none" typeName="none" width="31.0">
+              <position x="90" y="70" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection refLocalId="1">
+                  <position x="90" y="80" />
+                  <position x="60" y="80" />
+                </connection>
+              </connectionPointIn>
+              <connectionPointOut>
+                <relPosition x="31" y="10" />
+              </connectionPointOut>
+              <variable>x</variable>
+              <variable1 />
+            </contact>
+            <block height="510.0" instanceName="PID_inst0" localId="7" typeName="PID" width="120.0">
+              <position x="250" y="32" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="2">
+                      <position x="250" y="80" />
+                      <position x="121" y="80" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="CYCLE" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PERIOD" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="MANUAL" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="138" />
+                    <connection refLocalId="54">
+                      <position x="250" y="170" />
+                      <position x="230" y="170" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PV" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="168" />
+                    <connection refLocalId="59">
+                      <position x="250" y="200" />
+                      <position x="230" y="200" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="SV" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="198" />
+                    <connection refLocalId="60">
+                      <position x="250" y="230" />
+                      <position x="230" y="230" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="KP" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="228" />
+                    <connection refLocalId="61">
+                      <position x="250" y="260" />
+                      <position x="230" y="260" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="TI" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="258" />
+                    <connection refLocalId="62">
+                      <position x="250" y="290" />
+                      <position x="230" y="290" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="TD" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="288" />
+                    <connection refLocalId="63">
+                      <position x="250" y="320" />
+                      <position x="230" y="320" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="TV" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="318" />
+                    <connection refLocalId="56">
+                      <position x="250" y="350" />
+                      <position x="230" y="350" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="OA" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="348" />
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PN_SEL" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="378" />
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="MV_H" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="408" />
+                    <connection refLocalId="109">
+                      <position x="250" y="440" />
+                      <position x="230" y="440" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="MV_L" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="438" />
+                    <connection refLocalId="108">
+                      <position x="250" y="470" />
+                      <position x="230" y="470" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PID_SEL" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="468" />
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="PID_OPT" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="498" />
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="120" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="MV" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="120" y="78" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="MV_LMT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="120" y="108" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <outVariable comment="&#25511;&#21046;&#22120;&#36755;&#20986;" edge="none" executionOrderId="0" height="20.0" localId="8" negated="false" storage="none" width="30.0">
+              <position x="390" y="100" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="MV" refLocalId="7">
+                  <position x="390" y="110" />
+                  <position x="370" y="110" />
+                </connection>
+              </connectionPointIn>
+              <expression>MV</expression>
+            </outVariable>
+            <leftPowerRail comment="" height="40.0" localId="20" width="10.0">
+              <position x="50" y="620" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="760" />
+            </leftPowerRail>
+            <comment height="50.0" localId="48" width="250.0">
+              <position x="950" y="630" />
+              <content><![CDATA[测量值量程转换，数据类型转换]]></content>
+            </comment>
+            <inVariable comment="&#25163;&#33258;&#21160;&#24320;&#20851;&#65288;0&#33258;&#21160;&#65292;1&#25163;&#21160;&#65289;" edge="none" executionOrderId="0" height="20.0" localId="54" negated="false" storage="none" width="79.0">
+              <position x="151" y="160" />
+              <connectionPointOut>
+                <relPosition x="79" y="10" />
+              </connectionPointOut>
+              <expression>MAN_AUTO</expression>
+            </inVariable>
+            <inVariable comment="&#35843;&#33410;&#38400;&#25163;&#21160;&#35774;&#23450;&#20540;" edge="none" executionOrderId="0" height="20.0" localId="56" negated="false" storage="none" width="25.0">
+              <position x="205" y="340" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>TV</expression>
+            </inVariable>
+            <inVariable comment="&#28201;&#24230;&#27979;&#37327;&#20540;&#65288;0-50&#65289;" edge="none" executionOrderId="0" height="20.0" localId="59" negated="false" storage="none" width="37.0">
+              <position x="193" y="190" />
+              <connectionPointOut>
+                <relPosition x="37" y="10" />
+              </connectionPointOut>
+              <expression>PV_T</expression>
+            </inVariable>
+            <inVariable comment="&#35774;&#23450;&#20540;&#65288;0-100&#65289;" edge="none" executionOrderId="0" height="20.0" localId="60" negated="false" storage="none" width="25.0">
+              <position x="205" y="220" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>SV</expression>
+            </inVariable>
+            <inVariable comment="&#27604;&#20363;&#22686;&#30410;" edge="none" executionOrderId="0" height="20.0" localId="61" negated="false" storage="none" width="25.0">
+              <position x="205" y="250" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>KP</expression>
+            </inVariable>
+            <inVariable comment="&#31215;&#20998;&#26102;&#38388;" edge="none" executionOrderId="0" height="20.0" localId="62" negated="false" storage="none" width="20.0">
+              <position x="210" y="280" />
+              <connectionPointOut>
+                <relPosition x="20" y="10" />
+              </connectionPointOut>
+              <expression>Ti</expression>
+            </inVariable>
+            <inVariable comment="&#24494;&#20998;&#26102;&#38388;" edge="none" executionOrderId="0" height="20.0" localId="63" negated="false" storage="none" width="25.0">
+              <position x="205" y="310" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>Td</expression>
+            </inVariable>
+            <leftPowerRail comment="" height="40.0" localId="84" width="10.0">
+              <position x="50" y="810" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="930" />
+            </leftPowerRail>
+            <comment height="50.0" localId="3" width="140.0">
+              <position x="880" y="800" />
+              <content><![CDATA[电热丝占空比]]></content>
+            </comment>
+            <block height="90.0" instanceName="" localId="96" typeName="UDINT_TO_REAL" width="110.0">
+              <position x="209" y="592" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="20">
+                      <position x="209" y="640" />
+                      <position x="60" y="640" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="97">
+                      <position x="209" y="670" />
+                      <position x="189" y="670" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="110" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="110" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="AIO211_AI_CH4," edge="none" executionOrderId="0" height="20.0" localId="97" negated="false" storage="none" width="99.0">
+              <position x="90" y="660" />
+              <connectionPointOut>
+                <relPosition x="99" y="10" />
+              </connectionPointOut>
+              <expression>AIO211_AI_CH4</expression>
+            </inVariable>
+            <outVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="98" negated="false" storage="none" width="25.0">
+              <position x="339" y="660" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="96">
+                  <position x="339" y="670" />
+                  <position x="319" y="670" />
+                </connection>
+              </connectionPointIn>
+              <expression>X1</expression>
+            </outVariable>
+            <block height="120.0" instanceName="" localId="99" typeName="SUB_REAL" width="80.0">
+              <position x="462" y="592" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection formalParameter="ENO" refLocalId="96">
+                      <position x="462" y="640" />
+                      <position x="319" y="640" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="100">
+                      <position x="462" y="670" />
+                      <position x="442" y="670" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="101">
+                      <position x="462" y="700" />
+                      <position x="442" y="700" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="100" negated="false" storage="none" width="25.0">
+              <position x="417" y="660" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>X1</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="101" negated="false" storage="none" width="48.0">
+              <position x="394" y="690" />
+              <connectionPointOut>
+                <relPosition x="48" y="10" />
+              </connectionPointOut>
+              <expression>4000.0</expression>
+            </inVariable>
+            <outVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="102" negated="false" storage="none" width="25.0">
+              <position x="562" y="660" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="99">
+                  <position x="562" y="670" />
+                  <position x="542" y="670" />
+                </connection>
+              </connectionPointIn>
+              <expression>X2</expression>
+            </outVariable>
+            <block height="120.0" instanceName="" localId="103" typeName="DIV_REAL" width="70.0">
+              <position x="678" y="592" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection formalParameter="ENO" refLocalId="99">
+                      <position x="678" y="640" />
+                      <position x="542" y="640" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="104">
+                      <position x="678" y="670" />
+                      <position x="658" y="670" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="105">
+                      <position x="678" y="700" />
+                      <position x="658" y="700" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="70" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="70" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="104" negated="false" storage="none" width="25.0">
+              <position x="633" y="660" />
+              <connectionPointOut>
+                <relPosition x="25" y="10" />
+              </connectionPointOut>
+              <expression>X2</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="105" negated="false" storage="none" width="41.0">
+              <position x="617" y="690" />
+              <connectionPointOut>
+                <relPosition x="41" y="10" />
+              </connectionPointOut>
+              <expression>320.0</expression>
+            </inVariable>
+            <outVariable comment="&#28201;&#24230;&#27979;&#37327;&#20540;&#65288;0-50&#65289;" edge="none" executionOrderId="0" height="20.0" localId="106" negated="false" storage="none" width="37.0">
+              <position x="768" y="660" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="103">
+                  <position x="768" y="670" />
+                  <position x="748" y="670" />
+                </connection>
+              </connectionPointIn>
+              <expression>PV_T</expression>
+            </outVariable>
+            <comment height="50.0" localId="107" width="250.0">
+              <position x="400" y="240" />
+              <content><![CDATA[*KP不能为0，否则控制器不工作]]></content>
+            </comment>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="108" negated="false" storage="none" width="27.0">
+              <position x="203" y="460" />
+              <connectionPointOut>
+                <relPosition x="27" y="10" />
+              </connectionPointOut>
+              <expression>0.0</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="109" negated="false" storage="none" width="41.0">
+              <position x="189" y="430" />
+              <connectionPointOut>
+                <relPosition x="41" y="10" />
+              </connectionPointOut>
+              <expression>100.0</expression>
+            </inVariable>
+            <leftPowerRail comment="" height="40.0" localId="110" width="10.0">
+              <position x="50" y="1150" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="1270" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="PIPO_Config_inst0" localId="111" typeName="PIPO_Config" width="100.0">
+              <position x="128" y="1122" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="110">
+                      <position x="128" y="1170" />
+                      <position x="60" y="1170" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Channel" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="112">
+                      <position x="128" y="1200" />
+                      <position x="118" y="1200" />
+                      <position x="118" y="1210" />
+                      <position x="108" y="1210" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Mode" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="113">
+                      <position x="128" y="1230" />
+                      <position x="118" y="1230" />
+                      <position x="118" y="1230" />
+                      <position x="108" y="1230" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="ErrID" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="30.0" localId="112" negated="false" storage="none" width="18.0">
+              <position x="90" y="1190" />
+              <connectionPointOut>
+                <relPosition x="18" y="20" />
+              </connectionPointOut>
+              <expression>0</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="113" negated="false" storage="none" width="18.0">
+              <position x="90" y="1220" />
+              <connectionPointOut>
+                <relPosition x="18" y="10" />
+              </connectionPointOut>
+              <expression>2</expression>
+            </inVariable>
+            <comment height="50.0" localId="114" width="260.0">
+              <position x="760" y="1170" />
+              <content><![CDATA[PIPO通道0设置为PWM模式。]]></content>
+            </comment>
+            <leftPowerRail comment="" height="40.0" localId="115" width="10.0">
+              <position x="50" y="1490" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="1700" />
+            </leftPowerRail>
+            <block height="180.0" instanceName="PIPO_PWMA_inst0" localId="116" typeName="PIPO_PWMB" width="100.0">
+              <position x="160" y="1462" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="115">
+                      <position x="160" y="1510" />
+                      <position x="60" y="1510" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Channel" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="117">
+                      <position x="160" y="1540" />
+                      <position x="150" y="1540" />
+                      <position x="150" y="1550" />
+                      <position x="140" y="1550" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="118">
+                      <position x="160" y="1570" />
+                      <position x="150" y="1570" />
+                      <position x="150" y="1570" />
+                      <position x="140" y="1570" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Duty" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="138" />
+                    <connection refLocalId="125">
+                      <position x="160" y="1600" />
+                      <position x="150" y="1600" />
+                      <position x="150" y="1610" />
+                      <position x="140" y="1610" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Freq" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="168" />
+                    <connection refLocalId="121">
+                      <position x="160" y="1630" />
+                      <position x="150" y="1630" />
+                      <position x="150" y="1630" />
+                      <position x="140" y="1630" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="ErrID" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="30.0" localId="117" negated="false" storage="none" width="18.0">
+              <position x="122" y="1530" />
+              <connectionPointOut>
+                <relPosition x="18" y="20" />
+              </connectionPointOut>
+              <expression>0</expression>
+            </inVariable>
+            <inVariable comment="&#20026;1&#30005;&#28909;&#19997;&#25165;&#33021;&#24037;&#20316;" edge="none" executionOrderId="0" height="20.0" localId="118" negated="false" storage="none" width="40.0">
+              <position x="100" y="1560" />
+              <connectionPointOut>
+                <relPosition x="40" y="10" />
+              </connectionPointOut>
+              <expression>work</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="121" negated="false" storage="none" width="50.0">
+              <position x="90" y="1620" />
+              <connectionPointOut>
+                <relPosition x="50" y="10" />
+              </connectionPointOut>
+              <expression>10000</expression>
+            </inVariable>
+            <leftPowerRail comment="" height="40.0" localId="124" width="10.0">
+              <position x="50" y="980" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="1100" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="" localId="5" typeName="SUB_REAL" width="80.0">
+              <position x="153" y="952" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="124">
+                      <position x="153" y="1000" />
+                      <position x="60" y="1000" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="9">
+                      <position x="153" y="1030" />
+                      <position x="133" y="1030" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="13">
+                      <position x="153" y="1060" />
+                      <position x="133" y="1060" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="A&#36335;&#21344;&#31354;&#27604;&#65288;&#30001;MV&#36716;&#25442;&#24471;&#21040;&#65289;" edge="none" executionOrderId="0" height="20.0" localId="9" negated="false" storage="none" width="41.0">
+              <position x="92" y="1020" />
+              <connectionPointOut>
+                <relPosition x="41" y="10" />
+              </connectionPointOut>
+              <expression>100.0</expression>
+            </inVariable>
+            <outVariable comment="&#39118;&#25159;" edge="none" executionOrderId="0" height="20.0" localId="10" negated="false" storage="none" width="43.0">
+              <position x="253" y="1020" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="5">
+                  <position x="253" y="1030" />
+                  <position x="233" y="1030" />
+                </connection>
+              </connectionPointIn>
+              <expression>dutyB</expression>
+            </outVariable>
+            <inVariable comment="&#30005;&#28909;&#19997;" edge="none" executionOrderId="0" height="20.0" localId="13" negated="false" storage="none" width="43.0">
+              <position x="90" y="1050" />
+              <connectionPointOut>
+                <relPosition x="43" y="10" />
+              </connectionPointOut>
+              <expression>dutyA</expression>
+            </inVariable>
+            <comment height="50.0" localId="15" width="120.0">
+              <position x="840" y="998" />
+              <content><![CDATA[风扇占空比]]></content>
+            </comment>
+            <inVariable comment="&#39118;&#25159;" edge="none" executionOrderId="0" height="30.0" localId="125" negated="false" storage="none" width="46.0">
+              <position x="94" y="1590" />
+              <connectionPointOut>
+                <relPosition x="46" y="20" />
+              </connectionPointOut>
+              <expression>dutyB</expression>
+            </inVariable>
+            <leftPowerRail comment="" height="40.0" localId="126" width="10.0">
+              <position x="50" y="1750" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="1930" />
+            </leftPowerRail>
+            <block height="180.0" instanceName="PIPO_PWMA_inst1" localId="6" typeName="PIPO_PWMB" width="100.0">
+              <position x="160" y="1722" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="126">
+                      <position x="160" y="1770" />
+                      <position x="60" y="1770" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Channel" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="11">
+                      <position x="160" y="1800" />
+                      <position x="150" y="1800" />
+                      <position x="150" y="1810" />
+                      <position x="140" y="1810" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="12">
+                      <position x="160" y="1830" />
+                      <position x="150" y="1830" />
+                      <position x="150" y="1830" />
+                      <position x="140" y="1830" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Duty" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="138" />
+                    <connection refLocalId="16">
+                      <position x="160" y="1860" />
+                      <position x="150" y="1860" />
+                      <position x="150" y="1870" />
+                      <position x="140" y="1870" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Freq" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="168" />
+                    <connection refLocalId="14">
+                      <position x="160" y="1890" />
+                      <position x="150" y="1890" />
+                      <position x="150" y="1890" />
+                      <position x="140" y="1890" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="ErrID" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="30.0" localId="11" negated="false" storage="none" width="18.0">
+              <position x="122" y="1790" />
+              <connectionPointOut>
+                <relPosition x="18" y="20" />
+              </connectionPointOut>
+              <expression>4</expression>
+            </inVariable>
+            <inVariable comment="&#20026;1&#30005;&#28909;&#19997;&#25165;&#33021;&#24037;&#20316;" edge="none" executionOrderId="0" height="20.0" localId="12" negated="false" storage="none" width="40.0">
+              <position x="100" y="1820" />
+              <connectionPointOut>
+                <relPosition x="40" y="10" />
+              </connectionPointOut>
+              <expression>work</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="14" negated="false" storage="none" width="50.0">
+              <position x="90" y="1880" />
+              <connectionPointOut>
+                <relPosition x="50" y="10" />
+              </connectionPointOut>
+              <expression>10000</expression>
+            </inVariable>
+            <inVariable comment="&#30005;&#28909;&#19997;" edge="none" executionOrderId="0" height="30.0" localId="16" negated="false" storage="none" width="47.0">
+              <position x="93" y="1850" />
+              <connectionPointOut>
+                <relPosition x="47" y="20" />
+              </connectionPointOut>
+              <expression>dutyA</expression>
+            </inVariable>
+            <comment height="50.0" localId="17" width="380.0">
+              <position x="750" y="1500" />
+              <content><![CDATA[PIPO通道0/4根据各自占空比输出PWM波。]]></content>
+            </comment>
+            <leftPowerRail comment="" height="40.0" localId="127" width="10.0">
+              <position x="50" y="1320" />
+              <connectionPointOut formalParameter="">
+                <relPosition x="10" y="20" />
+              </connectionPointOut>
+              <line x="0" y="1440" />
+            </leftPowerRail>
+            <block height="120.0" instanceName="PIPO_Config_inst1" localId="18" typeName="PIPO_Config" width="100.0">
+              <position x="128" y="1292" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="127">
+                      <position x="128" y="1340" />
+                      <position x="60" y="1340" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Channel" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="19">
+                      <position x="128" y="1370" />
+                      <position x="118" y="1370" />
+                      <position x="118" y="1380" />
+                      <position x="108" y="1380" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="Mode" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="21">
+                      <position x="128" y="1400" />
+                      <position x="118" y="1400" />
+                      <position x="118" y="1400" />
+                      <position x="108" y="1400" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="ErrID" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="100" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <inVariable comment="" edge="none" executionOrderId="0" height="30.0" localId="19" negated="false" storage="none" width="18.0">
+              <position x="90" y="1360" />
+              <connectionPointOut>
+                <relPosition x="18" y="20" />
+              </connectionPointOut>
+              <expression>4</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="21" negated="false" storage="none" width="18.0">
+              <position x="90" y="1390" />
+              <connectionPointOut>
+                <relPosition x="18" y="10" />
+              </connectionPointOut>
+              <expression>2</expression>
+            </inVariable>
+            <comment height="50.0" localId="22" width="260.0">
+              <position x="770" y="1330" />
+              <content><![CDATA[PIPO通道4设置为PWM模式。]]></content>
+            </comment>
+            <block height="120.0" instanceName="" localId="128" typeName="MUL_REAL" width="80.0">
+              <position x="144" y="782" />
+              <inputVariables>
+                <variable edge="none" formalParameter="EN" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="48" />
+                    <connection refLocalId="84">
+                      <position x="144" y="830" />
+                      <position x="60" y="830" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN1" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="78" />
+                    <connection refLocalId="131">
+                      <position x="144" y="860" />
+                      <position x="124" y="860" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+                <variable edge="none" formalParameter="IN2" hidden="false" negated="false" storage="none">
+                  <connectionPointIn>
+                    <relPosition x="0" y="108" />
+                    <connection refLocalId="132">
+                      <position x="144" y="890" />
+                      <position x="124" y="890" />
+                    </connection>
+                  </connectionPointIn>
+                </variable>
+              </inputVariables>
+              <inOutVariables />
+              <outputVariables>
+                <variable edge="none" formalParameter="ENO" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="48" />
+                  </connectionPointOut>
+                </variable>
+                <variable edge="none" formalParameter="OUT" hidden="false" negated="false" storage="none">
+                  <connectionPointOut>
+                    <relPosition x="80" y="78" />
+                  </connectionPointOut>
+                </variable>
+              </outputVariables>
+            </block>
+            <outVariable comment="&#30005;&#28909;&#19997;" edge="none" executionOrderId="0" height="20.0" localId="130" negated="false" storage="none" width="43.0">
+              <position x="244" y="850" />
+              <connectionPointIn>
+                <relPosition x="0" y="10" />
+                <connection formalParameter="OUT" refLocalId="128">
+                  <position x="244" y="860" />
+                  <position x="224" y="860" />
+                </connection>
+              </connectionPointIn>
+              <expression>dutyA</expression>
+            </outVariable>
+            <inVariable comment="&#25511;&#21046;&#22120;&#36755;&#20986;" edge="none" executionOrderId="0" height="20.0" localId="131" negated="false" storage="none" width="30.0">
+              <position x="94" y="850" />
+              <connectionPointOut>
+                <relPosition x="30" y="10" />
+              </connectionPointOut>
+              <expression>MV</expression>
+            </inVariable>
+            <inVariable comment="" edge="none" executionOrderId="0" height="20.0" localId="132" negated="false" storage="none" width="34.0">
+              <position x="90" y="880" />
+              <connectionPointOut>
+                <relPosition x="34" y="10" />
+              </connectionPointOut>
+              <expression>0.25</expression>
+            </inVariable>
+          </LD>          
+        </body>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="config">
+        <resource name="resource1">
+          <task name="task1" priority="1">
+            <pouInstance name="task1_inst1" typeName="yewei"/>
+            <pouInstance name="task1_inst2" typeName="guangzhao"/>
+            <pouInstance name="task1_inst3" typeName="wendu"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
+</projects>
